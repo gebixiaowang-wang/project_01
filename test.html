@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width, initial-scale=1.0 ">
+    <title>Document</title>
+    <style>
+        .img {
+            width: 500px;
+            height: 500px;
+            /* mask: linear-gradient(#000, transparent); */
+        }
+    </style>
+</head>
+
+<body>
+    <form action="" id="form1">
+        <!-- <input type="text" name="uname"> -->
+        <input type="submit" value="提交" id="btn">
+    </form>
+    <input type="text" id="uname">
+    <button id="set">储存数据</button>
+    <button id="get">获取数据</button>
+    <img src="./123.jpg" alt="" class="img">
+</body>
+<script src="./jquery.js"></script>
+<script src="./template-web.js"></script>
+<script>
+    function fn(a, b, c) {
+        console.log(arguments.length);
+
+    }
+    fn(1, 3, 2, 7)
+        // var data = new Date()
+
+    // console.log(data.getFullYear());
+    // var arr = [1, '白章威', 3]
+    // console.log(...arr);
+    $('#set').on('click', function() {
+        var lo = $('#uname').val().trim()
+        localStorage.setItem('uname', lo)
+    })
+    $('#get').on('click', function() {
+            var lo = localStorage.getItem('uname')
+            $(this).html(lo)
+        })
+        // console.log(fd);
+    var form = document.querySelector('#form1')
+    form.addEventListener('submit', function(e) {
+        e.preventDefault()
+        var fd = new FormData('form1')
+        console.log(fd);
+
+    })
+    var time = null;
+    if (time) {
+        console.log(time);
+
+    }
+</script>
+
+</html>
